@@ -1,1 +1,353 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta property="og:title" content="Aves Oculus UAV productions">
+<meta property="og:description" content="Aves Oculus UAV Productions operates in southern Ontario and produces hi quality Images, Film, Maps and Models for the Construction, Survey, Agricultural and Media industries.">
+<meta property="og:image" content="http://avesoculus.com/images/thumbnail.png">
+<meta property="og:url" content="http://avesoculus.com/index.html">
+
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Aves Oculus - KW Ortho-maps</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <style type="text/css">
+  @keyframes animatedBackground {
+    from { background-position: 100% 0; }
+    to { background-position: 100% 100%; }
+  }
+
+  #con_scroll_ph {
+    background-image: url(images/info_clip_3c.png);
+    background-position-y: top; 
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: animatedBackground 60s linear infinite;
+    min-height: 169px;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+  #con_scroll_map {
+    background-image: url(images/info_clip_1c.png);
+    background-position-y: top; 
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: animatedBackground 60s linear infinite;
+    min-height: 169px;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+  #con_scroll_ag {
+    background-image: url(images/info_clip_2c.png);
+    background-position-y: top; 
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: animatedBackground 60s linear infinite;
+    min-height: 169px;
+    margin-bottom: 1em;
+    padding: 1em;
+  }
+
+  .ul_info {
+    list-style: none;
+    font-weight: bold;
+    font-size: large;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1em;
+  }
+  .background_image {
+
+    background-image: url(images/header2.png);
+    background-position-y: top; 
+    background-position-x: left;
+    background-repeat: no-repeat;
+
+  }
+  .con {
+
+    background-color:rgba(220,220,220,0.7);
+    margin-top: 0.5em;
+    padding: 0.5em;
+    border-radius:0.5em;
+  }
+
+  .con_black {
+
+background-color:rgba(190,190,190,1);
+margin-top: 0.5em;
+padding: 0.5em;
+border-radius:0.5em;
+}
+
+  .con_white {
+
+background-color:#eee;
+margin-top: 0.5em;
+padding: 0.5em;
+border-radius:0.5em;
+}
+
+  .tile {
+
+    min-height: 256px;
+
+  }
+  #map {
+    height: 400px;
+  }
+  input:not([type='submit']) {
+    width: 80%
+  }
+  textarea{
+    width: 90%;
+    clear: both;
+  }
+ /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+  /* Modal Content/Box */
+  .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  /* The Close Button */
+  .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+  } 
+  </style>
+
+</head>
+<body class="background_image">
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="column con">
+        <h1>Aves Oculus</h1>
+        <h4 style="text-align: right">Kitchener-Waterloo Orthographic Maps</h4>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="column con">
+        <h5 style="text-align: center">Our orthographic maps provide a bird's-eye view of the Earth's surface with minimal distortion, ideal for visualizing large areas. They are created using drone technology for precise and accurate mapping.</h5>
+        <p>Please review the maps available for purchase below. If you require an updated map for an existing location or a new map for a different location, please contact us at <a href="mailto:contact@avesoculus.com">contact@avesoculus.com</a>.</p>
+      </div>
+    </div>
+    <div class="row con_white">
+        <table>
+            <thead style="font-weight: bolder;font-size: large;">
+                <td>Location</td><td>Asset types</td><td>Date created</td><td>Price</td><td>Sample</td>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Doyle Drive Lot# 1-37 Cambridge</td>
+                <td>
+                    Orthographic photo map<br>
+                    Surface model<br>
+                    Plant Health<br>
+                    3d model
+                </td>
+                <td>
+                  9/20/2024
+                </td>
+                <td>
+                  $80 cdn
+                </td>
+                <td>
+                  <img src="images\samples\Doyle-Drive-9-20-2024_sample.png" style="max-width:200px" />
+                </td>
+              </tr>
+              <tr>
+                <td>Tottenham Street Lot# 83-3<br>
+                  Cannes Street Lot# 82-2 Kitchener</td>
+                <td>
+                    Orthographic photo map<br>
+                    Surface model<br>
+                    Plant Health<br>
+                    3d model
+                </td>
+                <td>
+                  9/20/2024
+                </td>
+                <td>
+                  $80 cdn
+                </td>
+                <td>
+                  <img src="images\samples\Tottenham-Street_2-83_9-16-2024_sample.png" style="max-width:200px" />
+                </td>
+              </tr>
+              <tr>
+                <td>Maitland Street Lot# 3-83 Kitchener</td>
+                <td>
+                    Orthographic photo map<br>
+                    Surface model<br>
+                    Plant Health<br>
+                    3d model
+                </td>
+                <td>
+                  9/14/2024
+                </td>
+                <td>
+                  $80 cdn
+                </td>
+                <td>
+                  <img src="images\samples\Maitland-Street_3-83_9-14-2024_sample.png" style="max-width:200px" />
+                </td>
+              </tr>
+              <tr>
+                <td>Maitland Street Lot# 3-83 Kitchener</td>
+                <td>
+                    Orthographic photo map<br>
+                    Surface model<br>
+                    Plant Health<br>
+                    3d model
+                </td>
+                <td>
+                  4/7/2024
+                </td>
+                <td>
+                  $80 cdn
+                </td>
+                <td>
+                  <img src="images\samples\Maitland-Street_3-83_4-7-2024_sample.png" style="max-width:200px" />
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+      <div class="column con_black"">
+        <h4>Don't see what you need?</h4>
+        <p>Email us at <a href="mailto:contact@avesoculus.com">contact@avesoculus.com</a>. We can map any location you need in Ontario.</p>
+      </div>
+    </div>  
+
+    
+
+
+  </div>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <!-- The Modal -->
+<div id="mdlMapping" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="$('#mdlMapping').hide('slow');">&times;</span>
+
+    <h3>3D Mapping and Survey</h3>
+    <p>
+      Whether your business is Construction, Agriculture, Mining or any other business that manages or works on terrain, 3D models and maps can aid in the decision making process. Having a accurate digital map of a work site can be beneficial in some of the following ways:
+    </p>
+    <div id="con_scroll_map">
+      <div class="ul_info">
+        <h4>Logistics and Route Planning</h4>
+        <h4>Project Planning and Progress Monitoring</h4>
+        <h4>Work Site Security and Inspection</h4>
+        <h4>Roof Modeling, Inspection, Geometry Reports</h4>
+      </div>
+    </div>
+    <p>Using our aerial platforms we capture Hi-Def images and use those images to produce 3D models and elevation maps. The results are viewable in a compatible web browser on a computer, tablet, or smartphone. Printed format is also available.</p>
+  </div>
+</div>
+<div id="mdlAgro" class="modal">
+    <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="$('#mdlAgro').hide('slow');">&times;</span>
+    <h3>Agricultural Analysis</h3>
+     <p>Using our aerial platforms we capture Hi-Def images and use those images to produce high quality maps and reports informing you of the status of your crops. These reports can be valuable resource for things such as:
+     </p>
+    <div id="con_scroll_ag">
+      <div class="ul_info">
+        <h4>Crop Variability Detection</h4>
+        <h4>Crop Loss Insurance Reporting</h4>
+        <h4>Plant health analysis using NDVI and VARI Image Technologies</h4>
+        <h4>Stand Count and Population Analysis</h4>
+      </div>
+    </div>
+    <p>
+      For best results a few flights should be flown over the course of a few weeks. The change over time can yield even more incites. The reports generated are viewable in a compatible web browser on a computer, tablet, or smartphone. Printed format is also available.
+    </p>
+  </div> 
+</div>
+
+<div id="mdlPhoto" class="modal">
+    <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="$('#mdlPhoto').hide('slow');">&times;</span>
+    <h3>Film and Photography</h3>
+     <p>Using our aerial platforms we capture consumer quality Hi-Def images and film for whatever your reasons. This may be such as:
+     </p>
+    <div id="con_scroll_ph">
+      <div class="ul_info">
+        <h4>Real Estate</h4>
+        <h4>Promotional Material</h4>
+        <h4>Internet Video</h4>
+        <h4>Events</h4>
+      </div>
+    </div>
+    <p>
+      
+    </p>
+  </div> 
+</div>
+
+</body>
+</html>
