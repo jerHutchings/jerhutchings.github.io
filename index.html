@@ -100,10 +100,10 @@
 
   .con_black {
 
-background-color:rgba(190,190,190,1);
-margin-top: 0.5em;
-padding: 0.5em;
-border-radius:0.5em;
+  background-color:rgba(190,190,190,1);
+  margin-top: 0.5em;
+  padding: 0.5em;
+  border-radius:0.5em;
 }
 
   .con_white {
@@ -140,7 +140,7 @@ border-radius:0.5em;
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
   /* Modal Content/Box */
@@ -167,7 +167,12 @@ border-radius:0.5em;
       cursor: pointer;
   } 
   </style>
-
+  <script>
+    function showSample(url){
+      $("#mdlSample").fadeIn();
+      $("#mdl_photo").attr("src",url);
+    }
+  </script>
 </head>
 <body class="background_image">
 
@@ -208,7 +213,8 @@ border-radius:0.5em;
                   $80 cdn
                 </td>
                 <td>
-                  <img src="images\samples\Doyle-Drive-9-20-2024_sample.png" style="max-width:200px" />
+                  <img src="images\samples\Doyle-Drive-9-20-2024_sample.png" style="max-width:200px"
+                  onclick="showSample($(this).attr('src'))" />
                 </td>
               </tr>
               <tr>
@@ -227,7 +233,8 @@ border-radius:0.5em;
                   $80 cdn
                 </td>
                 <td>
-                  <img src="images\samples\Tottenham-Street_2-83_9-16-2024_sample.png" style="max-width:200px" />
+                  <img src="images\samples\Tottenham-Street_2-83_9-16-2024_sample.png" style="max-width:200px"
+                  onclick="showSample($(this).attr('src'))"  />
                 </td>
               </tr>
               <tr>
@@ -245,7 +252,8 @@ border-radius:0.5em;
                   $80 cdn
                 </td>
                 <td>
-                  <img src="images\samples\Maitland-Street_3-83_9-14-2024_sample.png" style="max-width:200px" />
+                  <img src="images\samples\Maitland-Street_3-83_9-14-2024_sample.png" style="max-width:200px"
+                  onclick="showSample($(this).attr('src'))" />
                 </td>
               </tr>
               <tr>
@@ -263,91 +271,40 @@ border-radius:0.5em;
                   $80 cdn
                 </td>
                 <td>
-                  <img src="images\samples\Maitland-Street_3-83_4-7-2024_sample.png" style="max-width:200px" />
+                  <img src="images\samples\Maitland-Street_3-83_4-7-2024_sample.png" style="max-width:200px"
+                  onclick="showSample($(this).attr('src'))" />
                 </td>
               </tr>
             </tbody>
         </table>
     </div>
     <div class="row">
-      <div class="column con_black"">
+      <div class="column con"">
         <h4>Don't see what you need?</h4>
         <p>Email us at <a href="mailto:contact@avesoculus.com">contact@avesoculus.com</a>. We can map any location you need in Ontario.</p>
       </div>
     </div>  
 
-    
-
-
-  </div>
-
+  </div>  
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-  <!-- The Modal -->
-<div id="mdlMapping" class="modal">
-
   <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="$('#mdlMapping').hide('slow');">&times;</span>
-
-    <h3>3D Mapping and Survey</h3>
-    <p>
-      Whether your business is Construction, Agriculture, Mining or any other business that manages or works on terrain, 3D models and maps can aid in the decision making process. Having a accurate digital map of a work site can be beneficial in some of the following ways:
-    </p>
-    <div id="con_scroll_map">
-      <div class="ul_info">
-        <h4>Logistics and Route Planning</h4>
-        <h4>Project Planning and Progress Monitoring</h4>
-        <h4>Work Site Security and Inspection</h4>
-        <h4>Roof Modeling, Inspection, Geometry Reports</h4>
-      </div>
+<div id="mdlSample" class="modal">
+  <div class="container">
+    <div class="row">
+      <button class="button-primary" style="float: right;" onclick="$('#mdlSample').hide()">close</button>
     </div>
-    <p>Using our aerial platforms we capture Hi-Def images and use those images to produce 3D models and elevation maps. The results are viewable in a compatible web browser on a computer, tablet, or smartphone. Printed format is also available.</p>
+    <div class="row">
+      <img id="mdl_photo" style="width:80%;margin:10%" />
+    </div>
+    <div class="row">
+      <button class="button-primary" style="float: right;" onclick="$('#mdlSample').hide()">close</button>
+    </div>
   </div>
 </div>
-<div id="mdlAgro" class="modal">
-    <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="$('#mdlAgro').hide('slow');">&times;</span>
-    <h3>Agricultural Analysis</h3>
-     <p>Using our aerial platforms we capture Hi-Def images and use those images to produce high quality maps and reports informing you of the status of your crops. These reports can be valuable resource for things such as:
-     </p>
-    <div id="con_scroll_ag">
-      <div class="ul_info">
-        <h4>Crop Variability Detection</h4>
-        <h4>Crop Loss Insurance Reporting</h4>
-        <h4>Plant health analysis using NDVI and VARI Image Technologies</h4>
-        <h4>Stand Count and Population Analysis</h4>
-      </div>
-    </div>
-    <p>
-      For best results a few flights should be flown over the course of a few weeks. The change over time can yield even more incites. The reports generated are viewable in a compatible web browser on a computer, tablet, or smartphone. Printed format is also available.
-    </p>
-  </div> 
-</div>
 
-<div id="mdlPhoto" class="modal">
-    <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="$('#mdlPhoto').hide('slow');">&times;</span>
-    <h3>Film and Photography</h3>
-     <p>Using our aerial platforms we capture consumer quality Hi-Def images and film for whatever your reasons. This may be such as:
-     </p>
-    <div id="con_scroll_ph">
-      <div class="ul_info">
-        <h4>Real Estate</h4>
-        <h4>Promotional Material</h4>
-        <h4>Internet Video</h4>
-        <h4>Events</h4>
-      </div>
-    </div>
-    <p>
-      
-    </p>
-  </div> 
-</div>
 
 </body>
 </html>
