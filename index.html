@@ -42,6 +42,219 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjzE4xaMaKykpDOVUgt6HU6l9vPjpQ8iU&callback=initMap" async defer></script>
+  <style>
+    /* Add your custom styles here */
+    #map {
+      height: 500px;
+      width: 100%;
+    }
+  </style>
+  <script>
+    // Array of coordinates for the polygon
+
+    const siefrank = [
+      { lat: 43.38333303510191, lng: -80.48626030551033 },
+      { lat: 43.38344599033465, lng: -80.48547013179748 },
+      { lat: 43.38530529740792, lng: -80.48607851062522 },
+      { lat: 43.38518135600577, lng: -80.48685545018574 }
+    ];
+
+    const coordinates2 = [
+      { lat: 43.38586468425844, lng: -80.48402109108585},
+      { lat: 43.38631221306998, lng: -80.48133936186939 },
+      { lat: 43.38662077194439, lng: -80.48144318747444 },
+      { lat: 43.38616398089205, lng: -80.48412267617613 }
+    ];
+    const verfrank = [
+      { lat: 43.38347377158492, lng: -80.48450521612965 },
+      { lat: 43.38361742073512, lng: -80.48547013179748 },
+      { lat: 43.38534932576607, lng: -80.48589193932975 },
+      { lat: 43.38547617921258, lng: -80.4851314494118 }
+      
+    ];
+    const verwood = [
+    { lat: 43.38364202589957, lng: -80.48434482836531},
+    { lat: 43.38378623417486, lng: -80.48356827269015},
+    { lat: 43.38565445994838, lng: -80.48418302204524},
+    { lat: 43.3855223265351, lng: -80.48497148382555},
+    { lat: 43.38364202589957, lng: -80.48434482836531}
+    ];
+
+    const woodcanes = [
+      {lat: 43.38382127412266, lng: -80.48334854281413},
+      {lat: 43.38395660246294, lng: -80.48257127579599},
+      {lat: 43.38582882739920, lng: -80.48317786956838},
+      {lat: 43.38569681198918, lng: -80.48395810615065},
+      {lat: 43.38382127412266, lng: -80.48334854281413}
+    ];
+
+    const cantot = [
+    {lat: 43.38398486520563, lng: -80.48239796900317},
+    {lat: 43.38412537015657, lng: -80.48160364229810},
+    {lat: 43.38597267796415, lng: -80.48222499969302},
+    {lat: 43.38585299132885, lng: -80.48300760782243},
+    {lat: 43.38398486520563, lng: -80.48239796900317}
+    ];
+
+    const totchan = [
+    { lat: 43.38415303518683, lng: -80.48144156633003},
+    { lat: 43.38429030443164, lng: -80.48066232331102},
+    { lat: 43.38614032407271, lng: -80.48127409076967},
+    { lat: 43.38601042323635, lng: -80.48205329352496},
+    { lat: 43.38415303518683, lng: -80.48144156633003}
+    ];
+
+    const chanmad = [
+    { lat: 43.38432177635428, lng: -80.48049525062446},
+    { lat: 43.38446223381167, lng: -80.47971176792439},
+    { lat: 43.38631711601384, lng: -80.48032542012808},
+    { lat: 43.38618170167682, lng: -80.48110269598321},
+    { lat: 43.38432177635428, lng: -80.48049525062446}
+    ];
+
+    const anton = [
+    {lat: 43.39636450773862,lng: -80.50037311555958},
+    {lat: 43.39707500926125,lng: -80.49591886162368},
+    {lat: 43.39774862446735,lng: -80.49613741610727},
+    {lat: 43.39705367267788,lng: -80.50056705531676},
+    {lat: 43.39636450773862,lng: -80.50037311555958}
+    ];
+
+    const doyle = [
+    {lat: 43.49775443545681,lng: -80.19436796240804},
+    {lat: 43.49806841136463,lng: -80.19393703124540},
+    {lat: 43.49998763759589,lng: -80.19585131391749},
+    {lat: 43.49947515725139,lng: -80.19655231408592},
+    {lat: 43.49775443545681,lng: -80.19436796240804}
+    ];
+
+    function initMap() {
+      // Create the map centered at the first coordinate
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: coordinates2[0],
+        mapTypeId: 'satellite',
+        mapTypeControl: true,
+        streetViewControl: false,
+        fullscreenControl: false
+      });
+
+      // Create the polygon
+      const sfpolygon = new google.maps.Polygon({
+        paths: siefrank,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+      });
+      sfpolygon.addListener("click", function(){document.getElementById("siefrank").scrollIntoView({ behavior: "smooth"});});
+      
+
+      const polygon2 = new google.maps.Polygon({
+        paths: coordinates2,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+      });
+
+      const polygon3 = new google.maps.Polygon({
+        paths: verfrank,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+      });
+      polygon3.addListener("click", function(){document.getElementById("verfrank").scrollIntoView({ behavior: "smooth"});});
+      
+      const vwpolygon = new google.maps.Polygon({
+        paths: verwood,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+       });
+       vwpolygon.addListener("click", function(){document.getElementById("verwood").scrollIntoView({ behavior: "smooth"});});
+
+       const wcpolygon = new google.maps.Polygon({
+        paths: woodcanes,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+       });
+       wcpolygon.addListener("click", function(){document.getElementById("woodcanes").scrollIntoView({ behavior: "smooth"});});
+
+       const ctpolygon = new google.maps.Polygon({
+        paths: cantot,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+       });
+      ctpolygon.addListener("click", function(){document.getElementById("cantot").scrollIntoView({ behavior: "smooth"});});
+
+      const tchpolygon = new google.maps.Polygon({
+        paths: totchan,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+       });
+      tchpolygon.addListener("click", function(){document.getElementById("totchan").scrollIntoView({ behavior: "smooth"});});
+
+      const mchpolygon = new google.maps.Polygon({
+        paths: chanmad,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+       });
+      mchpolygon.addListener("click", function(){document.getElementById("chanmad").scrollIntoView({ behavior: "smooth"});});
+
+      const antonpolygon = new google.maps.Polygon({
+        paths: anton,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+       });
+      antonpolygon.addListener("click", function(){document.getElementById("anton").scrollIntoView({ behavior: "smooth"});});
+
+      const doylepolygon = new google.maps.Polygon({
+        paths: doyle,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+       });
+      doylepolygon.addListener("click", function(){document.getElementById("doyle").scrollIntoView({ behavior: "smooth"});});
+
+      // Set the polygon on the map
+      sfpolygon.setMap(map);
+      polygon2.setMap(map);
+      polygon3.setMap(map);
+      vwpolygon.setMap(map);
+      wcpolygon.setMap(map);
+      ctpolygon.setMap(map);
+      tchpolygon.setMap(map);
+      mchpolygon.setMap(map);
+      antonpolygon.setMap(map);
+      doylepolygon.setMap(map);
+    }
+  </script>
   <style type="text/css">
   @keyframes animatedBackground {
     from { background-position: 100% 0; }
@@ -199,255 +412,260 @@ border-radius:0.5em;
         <h5 style="text-align: center">Our orthographic maps provide a bird's-eye view of the Earth's surface with minimal distortion, ideal for visualizing large areas.</h5>
         <p>Please review the maps available for purchase below. Some locations have been mapped multiple times and different dates are available for purchase.</p>
         <p>If you require an updated map for an existing location or a new map for a different location, please contact us at <a href="mailto:contact@avesoculus.com">contact@avesoculus.com</a>.</p>
+        <p style="text-align: center;font-size: large;font-weight: bold;">The red areas in the map below are available. Click on the area to see the maps details.</p>
+        </div>
+    </div>
+    <div class="row">
+      <div id="map"></div>
+    </div>
+    <div id="scrolljob" style="height:500px;overflow-y: scroll;">
+      <div class="row con_white" id="doyle">
+        <div class="five columns">        
+            <div style="font-size: large;">
+              <b>Doyle Drive Lot# 1-37 Guelph</b>
+            </div>
+            <div style="margin-top:1em"><b>Dates available:</b></div>
+            <ul>
+              <li>9-20-2024</li>
+            </ul>
+            <b>Price: $80 cdn</b><br>
+        </div>
+        <div class="three columns">
+          <div ><b>Assets Available:</b></div><br>
+            Orthographic map<br>
+            Surface Models<br>
+            Plant Health<br>
+            3d model<br>
+        </div>
+        <div class="four columns">
+          <img src="images\samples\Doyle-Drive-9-20-2024_sample.png" style="max-width:200px"
+                    onclick="showSample($(this).attr('src'))" title="click to view"  />
+        </div>
+      </div>
+      <div class="row con_white">
+        <div class="five columns" id="cantot">
+          
+            <div style="font-size: large;">
+              <b>Tottenham Street Lot# 83-3<br>
+                Cannes Street Lot# 82-2 Kitchener</b>
+            </div>
+            <div style="margin-top:1em"><b>Dates available:</b></div>
+            <ul>
+              <li>9-20-2024</li>
+            </ul>
+            <b>Price: $80 cdn</b><br>
+        </div>
+        <div class="three columns">
+          <div ><b>Assets Available:</b></div><br>
+            Orthographic map<br>
+            Surface Models<br>
+            Plant Health<br>
+            3d model<br>
+        </div>
+        <div class="four columns">
+          <img src="images\samples\Tottenham-Street_2-83_9-16-2024_sample.png" style="max-width:200px"
+                    onclick="showSample($(this).attr('src'))" title="click to view"  />
+        </div>
+      </div>
+      <div class="row con_white">
+        <div class="five columns">
+          
+            <div style="font-size: large;">
+              <b>Maitland Street Lot# 3-83 Kitchener</b>
+            </div>
+            <div style="margin-top:1em"><b>Dates available:</b></div>
+            <ul>
+              <li>4-7-2024</li>
+              <li>9-14-2024</li>
+            </ul>
+            <b>Price: $80 cdn</b><br>
+        </div>
+        <div class="three columns">
+          <div ><b>Assets Available:</b></div><br>
+            Orthographic map<br>
+            Surface Models<br>
+            Plant Health<br>
+            3d model<br>
+        </div>
+        <div class="four columns">
+          <img src="images\samples\Maitland-Street_3-83_4-7-2024_sample.png" style="max-width:200px"
+                    onclick="showSample($(this).attr('src'))" title="click to view"  />
+        </div>
+      </div>           
+      <div class="row con_white">
+        <div class="five columns" id="woodcanes">
+          
+            <div style="font-size: large;">
+              <b>Cannes Street Lot# 3-83 Kitchener</b>
+            </div>
+            <div style="margin-top:1em"><b>Dates available:</b></div>
+            <ul>
+              <li>10-12-2024</li>
+            </ul>
+            <b>Price: $80 cdn</b><br>
+        </div>
+        <div class="three columns">
+          <div ><b>Assets Available:</b></div><br>
+            Orthographic map<br>
+            Surface Models<br>
+            Plant Health<br>
+            3d model<br>
+        </div>
+        <div class="four columns">
+          <img src="images\samples\Cannes-Street_3-83_10-12-2024.png" style="max-width:200px"
+                    onclick="showSample($(this).attr('src'))" title="click to view" />
+        </div>
+      </div>  
+      <div class="row con_white">
+        <div class="five columns" id="chanmad">
+          
+            <div style="font-size: large;">
+              <b>Madeleine St Lot #3 - 65<br>
+                Chantilly St Lot #2 - 64</b>
+            </div>
+            <div style="margin-top:1em"><b>Dates available:</b></div>
+            <ul>
+              <li>10-26-2024</li>
+            </ul>
+            <b>Price: $80 cdn</b><br>
+        </div>
+        <div class="three columns">
+          <div ><b>Assets Available:</b></div><br>
+            Orthographic map<br>
+            Surface Models<br>
+            Plant Health<br>
+            3d model<br>
+        </div>
+        <div class="four columns">
+          <img src="images\samples\Madeleine-Chantilly-10-26-2024.png" style="max-width:200px"
+                    onclick="showSample($(this).attr('src'))" title="click to view" />
+        </div>
+      </div> 
+      <div class="row con_white">
+        <div class="five columns" id="totchan">
+          
+            <div style="font-size: large;">
+              <b>Chantilly St Lot #3 - 83<br>
+                Tottenham St Lot #2 - 82</b>
+            </div>
+            <div style="margin-top:1em"><b>Dates available:</b></div>
+            <ul>
+              <li>10-26-2024</li>
+            </ul>
+            <b>Price: $80 cdn</b><br>
+        </div>
+        <div class="three columns">
+          <div ><b>Assets Available:</b></div><br>
+            Orthographic map<br>
+            Surface Models<br>
+            Plant Health<br>
+            3d model<br>
+        </div>
+        <div class="four columns">
+          <img src="images\samples\Chantilly-Tottenham-10-26-2024.png" style="max-width:200px"
+                    onclick="showSample($(this).attr('src'))" title="click to view" />
+        </div>
+      </div>           
+      <div class="row con_white">
+        <div class="five columns" id="verfrank">
+          
+            <div style="font-size: large;">
+              <b>Verona St Lot #3 - 71<br>
+                Frankfurt St Lot #4 - 84</b>
+            </div>
+            <div style="margin-top:1em"><b>Dates available:</b></div>
+            <ul>
+              <li>10-27-2024</li>
+            </ul>
+            <b>Price: $80 cdn</b><br>
+        </div>
+        <div class="three columns">
+          <div ><b>Assets Available:</b></div><br>
+            Orthographic map<br>
+            Surface Models<br>
+            Plant Health<br>
+            3d model<br>
+        </div>
+        <div class="four columns">
+          <img src="images\samples\Verona-Frankfurt-10-27-2024.png" style="max-width:200px"
+                    onclick="showSample($(this).attr('src'))" title="click to view" />
+        </div>
+      </div>          
+      <div class="row con_white">
+        <div class="five columns" id="verwood">
+          
+            <div style="font-size: large;">
+              <b>Woodbine Ave Lot #11 - 75<br>
+                Verona St Lot #2 - 75</b>
+            </div>
+            <div style="margin-top:1em"><b>Dates available:</b></div>
+            <ul>
+              <li>10-27-2024</li>
+            </ul>
+            <b>Price: $80 cdn</b><br>
+        </div>
+        <div class="three columns">
+          <div ><b>Assets Available:</b></div><br>
+            Orthographic map<br>
+            Surface Models<br>
+            Plant Health<br>
+            3d model<br>
+        </div>
+        <div class="four columns">
+          <img src="images\samples\Woodbine-Verona-10-27-2024.png" style="max-width:200px"
+                    onclick="showSample($(this).attr('src'))" title="click to view" />
+        </div>
+      </div> 
+      <div class="row con_white">
+        <div class="five columns" id="siefrank">
+          
+            <div style="font-size: large;">
+              <b>Sienna Cres Lot #306-369<br>
+                Frankfurt St Lot #3 - 83</b>
+            </div>
+            <div style="margin-top:1em"><b>Dates available:</b></div>
+            <ul>
+              <li>11-02-2024</li>
+            </ul>
+            <b>Price: $80 cdn</b><br>
+        </div>
+        <div class="three columns">
+          <div ><b>Assets Available:</b></div><br>
+            Orthographic map<br>
+            Surface Models<br>
+            Plant Health<br>
+            3d model<br>
+        </div>
+        <div class="four columns">
+          <img src="images/samples/Sienna-Crescent-Frankfurt-11-2-2024.png" style="max-width:200px"
+                    onclick="showSample($(this).attr('src'))" title="click to view" />
+        </div>
+      </div> 
+      <div class="row con_white">
+        <div class="five columns" id="anton">
+          
+            <div style="font-size: large;">
+              <b>Histand Trail - Anton Cres</b>
+            </div>
+            <div style="margin-top:1em"><b>Dates available:</b></div>
+            <ul>
+              <li>11-09-2024</li>
+            </ul>
+            <b>Price: $80 cdn</b><br>
+        </div>
+        <div class="three columns">
+          <div ><b>Assets Available:</b></div><br>
+            Orthographic map<br>
+            Surface Models<br>
+            Plant Health<br>
+            3d model<br>
+        </div>
+        <div class="four columns">
+          <img src="images/samples/Histand-Anton-11-9-2024.png" style="max-width:200px"
+            onclick="showSample($(this).attr('src'))" title="click to view" />
+        </div>
       </div>
     </div>
-    <div class="row con_white">
-      <div class="five columns">        
-          <div style="font-size: large;">
-            <b>Doyle Drive Lot# 1-37 Cambridge</b>
-          </div>
-          <div style="margin-top:1em"><b>Dates available:</b></div>
-          <ul>
-            <li>9-20-2024</li>
-          </ul>
-          <b>Price: $80 cdn</b><br>
-      </div>
-      <div class="three columns">
-        <div ><b>Assets Available:</b></div><br>
-          Orthographic map<br>
-          Surface Models<br>
-          Plant Health<br>
-          3d model<br>
-      </div>
-      <div class="four columns">
-        <img src="images\samples\Doyle-Drive-9-20-2024_sample.png" style="max-width:200px"
-                  onclick="showSample($(this).attr('src'))" title="click to view"  />
-      </div>
-    </div>
-    <div class="row con_white">
-      <div class="five columns">
-        
-          <div style="font-size: large;">
-            <b>Tottenham Street Lot# 83-3<br>
-              Cannes Street Lot# 82-2 Kitchener</b>
-          </div>
-          <div style="margin-top:1em"><b>Dates available:</b></div>
-          <ul>
-            <li>9-20-2024</li>
-          </ul>
-          <b>Price: $80 cdn</b><br>
-      </div>
-      <div class="three columns">
-        <div ><b>Assets Available:</b></div><br>
-          Orthographic map<br>
-          Surface Models<br>
-          Plant Health<br>
-          3d model<br>
-      </div>
-      <div class="four columns">
-        <img src="images\samples\Tottenham-Street_2-83_9-16-2024_sample.png" style="max-width:200px"
-                  onclick="showSample($(this).attr('src'))" title="click to view"  />
-      </div>
-    </div>
-    <div class="row con_white">
-      <div class="five columns">
-        
-          <div style="font-size: large;">
-            <b>Maitland Street Lot# 3-83 Kitchener</b>
-          </div>
-          <div style="margin-top:1em"><b>Dates available:</b></div>
-          <ul>
-            <li>4-7-2024</li>
-            <li>9-14-2024</li>
-          </ul>
-          <b>Price: $80 cdn</b><br>
-      </div>
-      <div class="three columns">
-        <div ><b>Assets Available:</b></div><br>
-          Orthographic map<br>
-          Surface Models<br>
-          Plant Health<br>
-          3d model<br>
-      </div>
-      <div class="four columns">
-        <img src="images\samples\Maitland-Street_3-83_4-7-2024_sample.png" style="max-width:200px"
-                  onclick="showSample($(this).attr('src'))" title="click to view"  />
-      </div>
-    </div>           
-    <div class="row con_white">
-      <div class="five columns">
-        
-          <div style="font-size: large;">
-            <b>Cannes Street Lot# 3-83 Kitchener</b>
-          </div>
-          <div style="margin-top:1em"><b>Dates available:</b></div>
-          <ul>
-            <li>10-12-2024</li>
-          </ul>
-          <b>Price: $80 cdn</b><br>
-      </div>
-      <div class="three columns">
-        <div ><b>Assets Available:</b></div><br>
-          Orthographic map<br>
-          Surface Models<br>
-          Plant Health<br>
-          3d model<br>
-      </div>
-      <div class="four columns">
-        <img src="images\samples\Cannes-Street_3-83_10-12-2024.png" style="max-width:200px"
-                  onclick="showSample($(this).attr('src'))" title="click to view" />
-      </div>
-    </div>  
-    <div class="row con_white">
-      <div class="five columns">
-        
-          <div style="font-size: large;">
-            <b>Madeleine St Lot #3 - 65<br>
-              Chantilly St Lot #2 - 64</b>
-          </div>
-          <div style="margin-top:1em"><b>Dates available:</b></div>
-          <ul>
-            <li>10-26-2024</li>
-          </ul>
-          <b>Price: $80 cdn</b><br>
-      </div>
-      <div class="three columns">
-        <div ><b>Assets Available:</b></div><br>
-          Orthographic map<br>
-          Surface Models<br>
-          Plant Health<br>
-          3d model<br>
-      </div>
-      <div class="four columns">
-        <img src="images\samples\Madeleine-Chantilly-10-26-2024.png" style="max-width:200px"
-                  onclick="showSample($(this).attr('src'))" title="click to view" />
-      </div>
-    </div> 
-    <div class="row con_white">
-      <div class="five columns">
-        
-          <div style="font-size: large;">
-            <b>Chantilly St Lot #3 - 83<br>
-              Tottenham St Lot #2 - 82</b>
-          </div>
-          <div style="margin-top:1em"><b>Dates available:</b></div>
-          <ul>
-            <li>10-26-2024</li>
-          </ul>
-          <b>Price: $80 cdn</b><br>
-      </div>
-      <div class="three columns">
-        <div ><b>Assets Available:</b></div><br>
-          Orthographic map<br>
-          Surface Models<br>
-          Plant Health<br>
-          3d model<br>
-      </div>
-      <div class="four columns">
-        <img src="images\samples\Chantilly-Tottenham-10-26-2024.png" style="max-width:200px"
-                  onclick="showSample($(this).attr('src'))" title="click to view" />
-      </div>
-    </div>           
-    <div class="row con_white">
-      <div class="five columns">
-        
-          <div style="font-size: large;">
-            <b>Verona St Lot #3 - 71<br>
-              Frankfurt St Lot #4 - 84</b>
-          </div>
-          <div style="margin-top:1em"><b>Dates available:</b></div>
-          <ul>
-            <li>10-27-2024</li>
-          </ul>
-          <b>Price: $80 cdn</b><br>
-      </div>
-      <div class="three columns">
-        <div ><b>Assets Available:</b></div><br>
-          Orthographic map<br>
-          Surface Models<br>
-          Plant Health<br>
-          3d model<br>
-      </div>
-      <div class="four columns">
-        <img src="images\samples\Verona-Frankfurt-10-27-2024.png" style="max-width:200px"
-                  onclick="showSample($(this).attr('src'))" title="click to view" />
-      </div>
-    </div>          
-    <div class="row con_white">
-      <div class="five columns">
-        
-          <div style="font-size: large;">
-            <b>Woodbine Ave Lot #11 - 75<br>
-              Verona St Lot #2 - 75</b>
-          </div>
-          <div style="margin-top:1em"><b>Dates available:</b></div>
-          <ul>
-            <li>10-27-2024</li>
-          </ul>
-          <b>Price: $80 cdn</b><br>
-      </div>
-      <div class="three columns">
-        <div ><b>Assets Available:</b></div><br>
-          Orthographic map<br>
-          Surface Models<br>
-          Plant Health<br>
-          3d model<br>
-      </div>
-      <div class="four columns">
-        <img src="images\samples\Woodbine-Verona-10-27-2024.png" style="max-width:200px"
-                  onclick="showSample($(this).attr('src'))" title="click to view" />
-      </div>
-    </div> 
-    <div class="row con_white">
-      <div class="five columns">
-        
-          <div style="font-size: large;">
-            <b>Sienna Cres Lot #306-369<br>
-              Frankfurt St Lot #3 - 83</b>
-          </div>
-          <div style="margin-top:1em"><b>Dates available:</b></div>
-          <ul>
-            <li>11-02-2024</li>
-          </ul>
-          <b>Price: $80 cdn</b><br>
-      </div>
-      <div class="three columns">
-        <div ><b>Assets Available:</b></div><br>
-          Orthographic map<br>
-          Surface Models<br>
-          Plant Health<br>
-          3d model<br>
-      </div>
-      <div class="four columns">
-        <img src="images/samples/Sienna-Crescent-Frankfurt-11-2-2024.png" style="max-width:200px"
-                  onclick="showSample($(this).attr('src'))" title="click to view" />
-      </div>
-    </div> 
-    <div class="row con_white">
-      <div class="five columns">
-        
-          <div style="font-size: large;">
-            <b>Histand Trail - Anton Cres</b>
-          </div>
-          <div style="margin-top:1em"><b>Dates available:</b></div>
-          <ul>
-            <li>11-09-2024</li>
-          </ul>
-          <b>Price: $80 cdn</b><br>
-      </div>
-      <div class="three columns">
-        <div ><b>Assets Available:</b></div><br>
-          Orthographic map<br>
-          Surface Models<br>
-          Plant Health<br>
-          3d model<br>
-      </div>
-      <div class="four columns">
-        <img src="images/samples/Histand-Anton-11-9-2024.png" style="max-width:200px"
-          onclick="showSample($(this).attr('src'))" title="click to view" />
-      </div>
-    </div>
-
               <!--
               <div class="row con_white">
                 <div class="five columns">
